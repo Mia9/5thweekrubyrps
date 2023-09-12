@@ -1,0 +1,29 @@
+body {
+	background: url("pinkcatpaws.png") no-repeat center fixed;
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	color: #8364e8;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 80px;
+}
+p {
+	text-align: center;
+	font-family: cursive;
+	color: #34073d;
+}
+form {
+	text-align: center;
+}
+h2, h4 {
+   text-align: center;
+   color: #ff8fab;
+}
+a {
+	text-align: center;
+}
+input {	
+	color: #f74c06;
+}

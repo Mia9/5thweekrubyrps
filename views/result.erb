@@ -4,10 +4,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Result</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h3>Player <%= @player_name %></h3>
+    <p>Player: <%= @player_name %></p>
     <h2> <%= @outcome %> </h2>
-    <<a href="/">Play again</a>
+    <h2>Your score is <%= @score %></h2>
+    <h4>Continue playing?</h4>
+    <form action ='/result' method="POST">
+    	<input type="radio" name="choice" value="Yes">YES
+    	<input type="radio" name="choice" value="No">NO
+    	<input type="submit" value="Submit">
+    </form>
+    <center><a href="/">Back to Homepage</a></center>
 </body>
 </html>
