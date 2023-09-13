@@ -21,9 +21,12 @@ h2, h4 {
    text-align: center;
    color: #ff8fab;
 }
-a {
-	text-align: center;
-}
+
 input {	
 	color: #f74c06;
+}
+
+h3 {
+	text-align: center;
+	color: #6330b4;
 }

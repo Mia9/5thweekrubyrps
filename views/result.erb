@@ -7,15 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <p>Player: <%= @player_name %></p>
-    <h2> <%= @outcome %> </h2>
-    <h2>Your score is <%= @score %></h2>
-    <h4>Continue playing?</h4>
-    <form action ='/result' method="POST">
-    	<input type="radio" name="choice" value="Yes">YES
-    	<input type="radio" name="choice" value="No">NO
-    	<input type="submit" value="Submit">
-    </form>
+    <p>Player: <%= session[:name] %></p>
+    <% session[:results].each_with_index do |round, index| %>
+        <h2>Round <%= index + 1%></h2>
+        <p>Player Choice: <%= round[:player] %></p>
+        <p>Computer Choice: <%= round[:computer] %></p>
+    <% end %>
+    <h3> Total wins: <%= session[:win_count] %> </h3>
+    <h3>Total loss: <%= session[:lose_count] %></h3>
+    <h3>Total ties: <%= session[:tie_count]%></h3>
     <center><a href="/">Back to Homepage</a></center>
 </body>
 </html>
