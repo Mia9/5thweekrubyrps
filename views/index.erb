@@ -7,8 +7,10 @@
     <link rel="icon" href="therock.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Hi! Welcome to Rock Paper Scissors!</h1>
+<body class="homepage">
+
+    <h1 class="home-title">Hi! Welcome to Rock Paper Scissors!</h1>
+   
     <p>Please Enter Your Name</p>
     <form action="/game" method="POST">
     	<label for ="name">Name:</label>
@@ -16,7 +18,15 @@
 
         <label for="rounds">How many rounds?</label>
         <input type="text" name="rounds" min="1" max="3">
+
         <input type="submit" value="Submit">
     </form>
+    <div class="white-background">
+        <p>Leaderboard</p>
+        <% session[:players].each_with_index do |(key, value), index|%>
+            <p>Player: <%= key["player_name"] %> :: Win counts: <%= key["win_count"] %></p>
+        <% end %>
+    </div>
+    <center><a href="/result">Check previous result</a></center>
 </body>
 </html>

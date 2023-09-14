@@ -6,7 +6,7 @@
 	<title>Result</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="resultpage">
     <p>Player: <%= session[:name] %></p>
     <% session[:results].each_with_index do |round, index| %>
         <h2>Round <%= index + 1%></h2>

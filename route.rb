@@ -1,21 +1,38 @@
 require 'sinatra'
 enable :sessions
 
+
 get '/' do  #---'/' means direct to localhost or HOMEPAGE!
+	#----define a variable with condition also can
+	if session[:players] == nil 
+		session[:players] = []
+	else
+		session[:players] = session[:players]
+	end
+
+	puts session[:players]
+
 	erb :index #this part direct you to index html page
 end
 
+get '/result' do
+	puts session[:results]
+	erb :result
+end
+
+get '/index' do
+	"Hello"
+	erb :game
+end
+
 post '/game' do
-	@player_name = params[:name]
-	@rounds = params[:rounds].to_i 
-	session[:name] = @player_name
-	session[:rounds] = @rounds
-	session[:results] = []
+	session[:name] = params[:name]
+	session[:rounds] = params[:rounds].to_i 
+	session[:results] = []	
 	erb :game # this one redirect to any html page u want
 end
 
-post '/result' do  #---<form action = put link here at index file
-      
+post '/result' do  #---<form action = put link here at index file    
    @player_choice = params[:choice]
    @computer_choice = ["Rock", "Paper", "Scissors"].sample
    
@@ -45,7 +62,8 @@ post '/result' do  #---<form action = put link here at index file
    end
    history = { player: @player_choice, computer: @computer_choice, result: @outcome}
    session[:results] << history
-   puts session[:results] 
+   puts session[:results]
+   
    if session[:results].length < session[:rounds]
    	erb :game
    else
@@ -54,7 +72,14 @@ post '/result' do  #---<form action = put link here at index file
    	session[:lose_count] = counter_winlose.count("You Lose")
    	session[:tie_count] = counter_winlose.count("TIE!")
    	puts "#{counter_winlose}"
+   	puts session[:win_count]
+   	player_win_scoreboard = {
+			"player_name" => session[:name],
+			"win_count" => session[:win_count]
+		}
+   	puts player_win_scoreboard
+   	session[:players].append(player_win_scoreboard)
    	erb :result
-   end
-   
+   end   
 end
+

@@ -6,8 +6,10 @@
 	<title>Rock Paper Scissors</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-	<h1>Rock, Paper, Scissors</h1>
+<body class="gamepage">
+	
+	<h1 class="game-title">Rock, Paper, Scissors</h1>
+
 	<p>Hello there! <%= session[:name] %> </p>
     <p>You have <%= session[:rounds] %> rounds</p>
 	<form action ="/result" method ="POST">

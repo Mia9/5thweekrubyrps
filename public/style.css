@@ -1,17 +1,50 @@
-body {
+/*body {
+	background: url("pinkcatpaws.png") no-repeat center fixed;
+	background-size: cover;
+}*/
+
+.homepage {
+
+	background: url("chibicats.jpg") no-repeat center fixed;
+	background-size: cover;
+}
+
+
+.gamepage {
 	background: url("pinkcatpaws.png") no-repeat center fixed;
 	background-size: cover;
 }
 
-h1 {
+.resultpage {
+	background: url("pinkcatpaws.png") no-repeat center fixed;
+	background-size: cover;
+}
+
+/*h1 {
 	text-align: center;
-	color: #8364e8;
+	color: #C51E3A;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 80px;
+}*/
+
+.home-title {
+	text-align: center;
+	color: #C51E3A;
 	font-family: 'Brush Script MT', cursive;
 	font-size: 80px;
 }
+
+.game-title {
+	text-align: center;
+	color: #ff930f;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 80px;
+}
+
 p {
 	text-align: center;
 	font-family: cursive;
+	font-size: 40px;
 	color: #34073d;
 }
 form {
@@ -29,4 +62,9 @@ input {
 h3 {
 	text-align: center;
 	color: #6330b4;
+}
+
+.white-background {
+	background-color: white;
+	opacity: 0.25;
 }
